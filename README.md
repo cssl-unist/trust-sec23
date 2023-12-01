@@ -115,6 +115,26 @@ hash of the executable may vary
 cd $PRJHOME/benchmarks/tokio
 ./build.sh
 cd target/release/deps
+```
 
+## Authors
+- Inyoung Bang (Seoul National University) <iybang@sor.snu.ac.kr>
+- Martin Kayondo (Seoul National University) <kymartin@sor.snu.ac.kr>
+- Hyungon Moon (UNIST) <hyungon@unist.ac.kr>
+- Yunheung Paek (Seoul National University) <ypaek@snu.ac.kr>
 
+## Publications
+```
+@inproceedings {287352,
+author      = {Inyoung Bang and Martin Kayondo and HyunGon Moon and Yunheung Paek},
+title       = {{TRust}: A Compilation Framework for In-process Isolation to Protect Safe Rust against Untrusted Code},
+booktitle   = {32nd USENIX Security Symposium (USENIX Security 23)},
+year        = {2023},
+isbn        = {978-1-939133-37-3},
+address     = {Anaheim, CA},
+pages       = {6947--6964},
+url         = {https://www.usenix.org/conference/usenixsecurity23/presentation/bang},
+publisher   = {USENIX Association},
+month       = aug
+}
 ```
