@@ -1,6 +1,6 @@
 # trust-sec23
 
-##Download Source Code
+# #Download Source Code
 ```sh
 git clone https://github.com/cssl-unist/trust-sec23.git
 ```
@@ -22,7 +22,7 @@ Make sure you have installed the dependencies:
 * `libstdc++-static` may be required on some Linux distributions such as Fedora
   and Ubuntu
 
-##Build Rust
+## Build Rust
 ```sh
 cd TRust
 cd rust
@@ -32,41 +32,41 @@ rustup default trust
 ```
 
 
-##Build mimalloc
+## Build mimalloc
 ```sh
 cd ../mpk-mimalloc
 ./build.sh
 ```
 
-##Build Dynamic Library
+## Build Dynamic Library
 ```sh
 cd ../mpk-library
 ./build.sh
 ```
 
-##Set Environment Variables
+## Set Environment Variables
 ```sh
 cd ../
 . ./setup.sh
 ```
 Environment variables set-up is required for both building the framework and running benchmarks
 
-##Build Demangler
+## Build Demangler
 ```sh
 cd $PRJHOME/mpk-rust-demangle
 cargo build --lib
 cargo build --lib --release
 ```
 
-##Build SVF
+## Build SVF
 ```sh
 cd $PRJHOME/mpk-svf
 . ./build.sh
 ```
 
-##Build and Run Benchmarks
+## Build and Run Benchmarks
 
-###Build and Run Base64, Bytes, Byteorder, Json,  Image, Regex
+### Build and Run Base64, Bytes, Byteorder, Json,  Image, Regex
 ```sh
 cd $PRJHOME/benchmarks/base64
 ./build.sh
@@ -75,7 +75,7 @@ LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./benchmarks-b37d04cee6b6da39  -
 ```
 hash of the executable may vary (the executable may not exactly be benchmarks-b37d04cee6b6da39)
 
-###Build and Run Regex
+### Build and Run Regex
 ```sh
 cd $PRJHOME/benchmarks/regex/bench
 ./build.sh
@@ -83,7 +83,7 @@ cd ../target/release/deps
 LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./benchmarks-b37d04cee6b6da39  --bench
 ```
 
-###Build and Run Vec, String, Linked-list, Vec-deque, Btree
+### Build and Run Vec, String, Linked-list, Vec-deque, Btree
 ```sh
 cd $PRJHOME/benchmarks/std
 ./build.sh
@@ -97,7 +97,7 @@ LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./collectionsbenches-949558e15ed
 ```
 hash of the executable may vary
 
-###Build and Run Hyper
+### Build and Run Hyper
 ```sh
 cd $PRJHOME/benchmarks/hyper
 ./build.sh
@@ -110,7 +110,7 @@ LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./server-6050495059813025 --benc
 ```
 hash of the executable may vary
 
-###Build and Run Tokio
+### Build and Run Tokio
 ```sh
 cd $PRJHOME/benchmarks/tokio
 ./build.sh
