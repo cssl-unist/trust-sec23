@@ -1,0 +1,1 @@
+export LLVM_DIR=${PRJHOME}/rust/build/x86_64-unknown-linux-gnu/llvm

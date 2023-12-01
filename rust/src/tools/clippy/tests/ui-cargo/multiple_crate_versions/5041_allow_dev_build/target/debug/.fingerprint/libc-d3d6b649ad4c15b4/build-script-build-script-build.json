@@ -1,0 +1,1 @@
+{"rustc":2254591131494532767,"features":"[\"default\", \"std\"]","target":10088282520713642473,"profile":13719610756125836611,"path":8827428749696527703,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/libc-d3d6b649ad4c15b4/dep-build-script-build-script-build"}}],"rustflags":["-Zunstable-options"],"metadata":14998826085014762512,"config":0,"compile_kind":0}

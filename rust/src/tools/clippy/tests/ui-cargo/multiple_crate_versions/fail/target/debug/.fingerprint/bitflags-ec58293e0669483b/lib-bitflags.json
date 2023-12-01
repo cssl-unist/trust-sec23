@@ -1,0 +1,1 @@
+{"rustc":2254591131494532767,"features":"[\"default\", \"example_generated\"]","target":14123478400658042508,"profile":10033495471373437411,"path":2601876011743096702,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/bitflags-ec58293e0669483b/dep-lib-bitflags"}}],"rustflags":["-Zunstable-options"],"metadata":257238644654482386,"config":0,"compile_kind":0}

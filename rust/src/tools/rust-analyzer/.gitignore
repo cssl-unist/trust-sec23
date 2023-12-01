@@ -1,0 +1,11 @@
+/target/
+/dist/
+crates/*/target
+**/*.rs.bk
+**/*.rs.pending-snap
+.idea/*
+*.log
+*.iml
+.vscode/settings.json
+generated_assists.adoc
+generated_features.adoc

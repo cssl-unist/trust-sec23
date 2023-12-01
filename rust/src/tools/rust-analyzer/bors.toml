@@ -1,0 +1,8 @@
+status = [
+    "Rust (ubuntu-latest)",
+    "Rust (windows-latest)",
+    # "Rust (macos-latest)",
+    "TypeScript (ubuntu-latest)",
+    "TypeScript (windows-latest)",
+]
+delete_merged_branches = true
