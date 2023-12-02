@@ -32,7 +32,7 @@ rustup default trust
 ```
 
 
-## Build mimalloc
+## Build Mimalloc
 ```sh
 cd ../mpk-mimalloc
 ./build.sh
