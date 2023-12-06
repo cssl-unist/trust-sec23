@@ -115,6 +115,9 @@ hash of the executable may vary
 cd $PRJHOME/benchmarks/tokio
 ./build.sh
 cd target/release/deps
+LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./sync_rwlock-76771b161ead33bd --bench
+LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./sync_semaphore-0fc9b6fec82f8c59 --bench
+LD_PRELOAD=$PRJHOME/mpk-library/build/libmpk.so ./signal-9123367a9386d186 --bench
 ```
 
 ## Authors
