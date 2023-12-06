@@ -1,0 +1,36 @@
+[package]
+name = "base64"
+version = "0.13.0"
+authors = ["Alice Maz <alice@alicemaz.com>", "Marshall Pierce <marshall@mpierce.org>"]
+description = "encodes and decodes base64 as bytes or utf8"
+repository = "https://github.com/marshallpierce/rust-base64"
+documentation = "https://docs.rs/base64"
+readme = "README.md"
+keywords = ["base64", "utf8", "encode", "decode", "no_std"]
+categories = ["encoding"]
+license = "MIT/Apache-2.0"
+edition = "2018"
+
+[[bench]]
+name = "benchmarks"
+harness = false
+
+[dev-dependencies]
+criterion = "0.3.4"
+rand = "0.6.1"
+structopt = "0.3.21"
+
+[features]
+default = ["std"]
+alloc = []
+std = []
+
+[profile.bench]
+# Useful for better disassembly when using `perf record` and `perf annotate`
+debug = true
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Rocket" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/actix-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/base64" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bevy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bincode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bitflags" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/byteorder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bytes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cgmath" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/criterion.rs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/http" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hyper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/image" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jemallocator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/json-rust" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nom" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/petgraph" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pulldown-cmark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rand" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/regex" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/servo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/slice_deque" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/syn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/textwrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tokio" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,22 @@
+[package]
+name = "Std"
+version = "0.1.0"
+authors = ["peiming <peiming@tamu.edu>"]
+#autobenches = false
+
+[dependencies]
+rand = "0.8.4"
+
+[[bench]]
+name = "collectionsbenches"
+path = "./benches/lib.rs"
+
+#[[bench]]
+#name = "vec_deque_append_bench"
+#path = "/home/peiming/Documents/Workspace/Papers/Benches/Std/benches"
+#harness = false
+
+[profile.bench]
+opt-level = 3
+codegen-units = 1
+

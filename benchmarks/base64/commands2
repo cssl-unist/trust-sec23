@@ -1,0 +1,2 @@
+rm -rf target
+env RUSTFLAGS="-C save-temps --emit=llvm-bc -Z print-link-args" cargo bench --no-run > link_args.txt 

@@ -1,0 +1,1258 @@
+warning: An explicit [[bench]] section is specified in Cargo.toml which currently
+disables Cargo from automatically inferring other benchmark targets.
+This inference behavior will change in the Rust 2018 edition and the following
+files will be included as a benchmark target:
+
+* /home/martin/projects/mpk-rust/mpkbenches/std/benches/linked_list.rs
+* /home/martin/projects/mpk-rust/mpkbenches/std/benches/string.rs
+* /home/martin/projects/mpk-rust/mpkbenches/std/benches/vec_deque.rs
+* /home/martin/projects/mpk-rust/mpkbenches/std/benches/vec.rs
+
+This is likely to break cargo build or cargo test as these files may not be
+ready to be compiled as a benchmark target today. You can future-proof yourself
+and disable this warning by adding `autobenches = false` to your [package]
+section. You may also move the files to a location where Cargo would not
+automatically infer them to be a target, such as in subfolders.
+
+For more information on this warning you can consult
+https://github.com/rust-lang/cargo/issues/5330
+warning: unused manifest key: build
+   Compiling getrandom v0.2.3
+error[E0773]: attempted to define built-in macro more than once
+    --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:1269:5
+     |
+1269 | /     macro_rules! cfg {
+1270 | |         ($($cfg:tt)*) => {
+1271 | |             /* compiler built-in */
+1272 | |         };
+1273 | |     }
+     | |_____^
+     |
+note: previously defined here
+    --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:1269:5
+     |
+1269 | /     macro_rules! cfg {
+1270 | |         ($($cfg:tt)*) => {
+1271 | |             /* compiler built-in */
+1272 | |         };
+1273 | |     }
+     | |_____^
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bool`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `char`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `str`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `array`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `slice`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `slice_u8`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `const_ptr`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `mut_ptr`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `const_slice_ptr`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `mut_slice_ptr`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `i8`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `i16`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `i32`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `i64`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `i128`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `isize`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `u8`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `u16`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `u32`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `u64`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `u128`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `usize`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `f32`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `f64`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `sized`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `unsize`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `structural_peq`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `structural_teq`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `copy`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `clone`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `sync`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `discriminant_kind`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `discriminant_type`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `pointee_trait`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `metadata_type`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `dyn_metadata`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `freeze`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `drop`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `coerce_unsized`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `dispatch_from_dyn`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `add`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `sub`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `mul`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `div`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `rem`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `neg`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `not`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitxor`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitand`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitor`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `shl`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `shr`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `add_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `sub_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `mul_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `div_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `rem_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitxor_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitand_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `bitor_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `shl_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `shr_assign`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `index`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `index_mut`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `unsafe_cell`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `va_list`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `deref`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `deref_mut`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `deref_target`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `receiver`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `fn`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `fn_mut`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `fn_once`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `fn_once_output`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `future_trait`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `generator_state`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `generator`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `generator_return`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `unpin`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `pin`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `eq`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `partial_ord`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_fmt`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_display`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_str`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `const_panic_fmt`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_bounds_check`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_info`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `panic_location`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `drop_in_place`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `alloc_layout`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `const_eval_select`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `const_eval_select_ct`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `phantom_data`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `manually_drop`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `maybe_uninit`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `align_offset`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Try`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `slice_len_fn`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `from_residual`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `from_output`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `branch`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Ready`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Pending`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `from_generator`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `get_context`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `poll`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `from`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Some`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `None`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Ok`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Err`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Continue`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Break`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `into_future`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `into_iter`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `next`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `new_unchecked`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `RangeFrom`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `RangeFull`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `RangeInclusive`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `range_inclusive_new`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `Range`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `RangeToInclusive`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error: duplicate lang item in crate `core` (which `std` depends on): `RangeTo`.
+  |
+  = note: the lang item is first defined in crate `core` (which `getrandom` depends on)
+  = note: first definition in `core` loaded from /home/martin/projects/mpk-rust/mpkbenches/std/target/x86_64-unknown-linux-gnu/release/deps/libcore-2fd20782ffab8111.rmeta
+  = note: second definition in `core` loaded from /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-0e3656b1fda5fd7b.rlib
+
+error[E0277]: the size for values of type `i32` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:74:34
+    |
+74  |     pub fn raw_os_error(self) -> Option<i32> {
+    |                                  ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `i32`
+note: required by a bound in `core::option::Option`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:515:17
+    |
+515 | pub enum Option<T> {
+    |                 ^ required by this bound in `core::option::Option`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:117:50
+    |
+117 |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    |                                                  ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `core::fmt::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:117:50
+    |
+117 |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    |                                                  ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `core::fmt::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:136:50
+    |
+136 |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    |                                                  ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `core::fmt::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:136:50
+    |
+136 |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    |                                                  ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `core::fmt::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `core::num::NonZeroU32` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:151:6
+    |
+151 | impl From<NonZeroU32> for Error {
+    |      ^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `core::num::NonZeroU32`
+note: required by a bound in `core::convert::From`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/convert/mod.rs:368:16
+    |
+368 | pub trait From<T>: Sized {
+    |                ^ required by this bound in `core::convert::From`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:151:6
+    |
+151 | impl From<NonZeroU32> for Error {
+    |      ^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::convert::From`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/convert/mod.rs:368:20
+    |
+368 | pub trait From<T>: Sized {
+    |                    ^^^^^ required by this bound in `core::convert::From`
+
+error[E0277]: the size for values of type `&'static str` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:157:35
+    |
+157 | fn internal_desc(error: Error) -> Option<&'static str> {
+    |                                   ^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `&'static str`
+note: required by a bound in `core::option::Option`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:515:17
+    |
+515 | pub enum Option<T> {
+    |                 ^ required by this bound in `core::option::Option`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util.rs:42:42
+    |
+42  |     pub fn unsync_init(&self, init: impl FnOnce() -> usize) -> usize {
+    |                                          ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::ops::FnOnce`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:219:18
+    |
+219 | pub trait FnOnce<Args> {
+    |                  ^^^^ required by this bound in `core::ops::FnOnce`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util.rs:61:42
+    |
+61  |     pub fn unsync_init(&self, init: impl FnOnce() -> bool) -> bool {
+    |                                          ^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::ops::FnOnce`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:219:18
+    |
+219 | pub trait FnOnce<Args> {
+    |                  ^^^^ required by this bound in `core::ops::FnOnce`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error_impls.rs:15:6
+    |
+15  | impl From<Error> for io::Error {
+    |      ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::convert::From`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/convert/mod.rs:368:16
+    |
+368 | pub trait From<T>: Sized {
+    |                ^ required by this bound in `core::convert::From`
+
+error[E0277]: the size for values of type `std::io::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error_impls.rs:15:6
+    |
+15  | impl From<Error> for io::Error {
+    |      ^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `std::io::Error`
+note: required by a bound in `core::convert::From`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/convert/mod.rs:368:20
+    |
+368 | pub trait From<T>: Sized {
+    |                    ^^^^^ required by this bound in `core::convert::From`
+
+error[E0277]: `error::Error` doesn't implement `std::fmt::Display`
+  --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error_impls.rs:24:6
+   |
+24 | impl std::error::Error for Error {}
+   |      ^^^^^^^^^^^^^^^^^ `error::Error` cannot be formatted with the default formatter
+   |
+   = help: the trait `std::fmt::Display` is not implemented for `error::Error`
+   = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+note: required by a bound in `std::error::Error`
+  --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/error.rs:55:26
+   |
+55 | pub trait Error: Debug + Display {
+   |                          ^^^^^^^ required by this bound in `std::error::Error`
+
+error[E0277]: `error::Error` doesn't implement `std::fmt::Debug`
+  --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error_impls.rs:24:6
+   |
+24 | impl std::error::Error for Error {}
+   |      ^^^^^^^^^^^^^^^^^ `error::Error` cannot be formatted using `{:?}`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `error::Error`
+   = note: add `#[derive(Debug)]` to `error::Error` or manually `impl std::fmt::Debug for error::Error`
+note: required by a bound in `std::error::Error`
+  --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/error.rs:55:18
+   |
+55 | pub trait Error: Debug + Display {
+   |                  ^^^^^ required by this bound in `std::error::Error`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/lib.rs:242:38
+    |
+242 | pub fn getrandom(dest: &mut [u8]) -> Result<(), Error> {
+    |                                      ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/lib.rs:242:38
+    |
+242 | pub fn getrandom(dest: &mut [u8]) -> Result<(), Error> {
+    |                                      ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:24:10
+    |
+24  | #[derive(Copy, Clone, Eq, PartialEq)]
+    |          ^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::marker::Copy`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/marker.rs:383:17
+    |
+383 | pub trait Copy: Clone {
+    |                 ^^^^^ required by this bound in `core::marker::Copy`
+    = note: this error originates in the derive macro `Copy` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:24:16
+    |
+24  | #[derive(Copy, Clone, Eq, PartialEq)]
+    |                ^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::clone::Clone`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/clone.rs:108:18
+    |
+108 | pub trait Clone: Sized {
+    |                  ^^^^^ required by this bound in `core::clone::Clone`
+    = note: this error originates in the derive macro `Clone` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the size for values of type `&str` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/error.rs:94:50
+    |
+94  |         fn os_err(errno: i32, buf: &mut [u8]) -> Option<&str> {
+    |                                                  ^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `&str`
+note: required by a bound in `core::option::Option`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:515:17
+    |
+515 | pub enum Option<T> {
+    |                 ^ required by this bound in `core::option::Option`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util_libc.rs:53:6
+    |
+53  | ) -> Result<(), Error> {
+    |      ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util_libc.rs:53:6
+    |
+53  | ) -> Result<(), Error> {
+    |      ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `core::ptr::NonNull<libc::c_void>` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util_libc.rs:91:26
+    |
+91  |     pub fn ptr(&self) -> Option<NonNull<libc::c_void>> {
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `core::ptr::NonNull<libc::c_void>`
+note: required by a bound in `core::option::Option`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:515:17
+    |
+515 | pub enum Option<T> {
+    |                 ^ required by this bound in `core::option::Option`
+
+error[E0277]: the size for values of type `i32` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util_libc.rs:108:44
+    |
+108 | pub unsafe fn open_readonly(path: &str) -> Result<libc::c_int, Error> {
+    |                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `i32`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/util_libc.rs:108:44
+    |
+108 | pub unsafe fn open_readonly(path: &str) -> Result<libc::c_int, Error> {
+    |                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:34:44
+    |
+34  | pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), Error> {
+    |                                            ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:34:44
+    |
+34  | pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), Error> {
+    |                                            ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `i32` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:52:20
+    |
+52  | fn get_rng_fd() -> Result<libc::c_int, Error> {
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `i32`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:52:20
+    |
+52  | fn get_rng_fd() -> Result<libc::c_int, Error> {
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `i32` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:54:20
+    |
+54  |     fn get_fd() -> Option<libc::c_int> {
+    |                    ^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `i32`
+note: required by a bound in `core::option::Option`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:515:17
+    |
+515 | pub enum Option<T> {
+    |                 ^ required by this bound in `core::option::Option`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:90:30
+    |
+90  | fn wait_until_rng_ready() -> Result<(), Error> {
+    |                              ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:90:30
+    |
+90  | fn wait_until_rng_ready() -> Result<(), Error> {
+    |                              ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:135:21
+    |
+135 | struct DropGuard<F: FnMut()>(F);
+    |                     ^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::ops::FnMut`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:147:17
+    |
+147 | pub trait FnMut<Args>: FnOnce<Args> {
+    |                 ^^^^ required by this bound in `core::ops::FnMut`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/use_file.rs:137:9
+    |
+137 | impl<F: FnMut()> Drop for DropGuard<F> {
+    |         ^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::ops::FnOnce`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:219:18
+    |
+219 | pub trait FnOnce<Args> {
+    |                  ^^^^ required by this bound in `core::ops::FnOnce`
+
+error[E0277]: the size for values of type `()` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/linux_android.rs:16:44
+    |
+16  | pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), Error> {
+    |                                            ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `()`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:17
+    |
+503 | pub enum Result<T, E> {
+    |                 ^ required by this bound in `core::result::Result`
+
+error[E0277]: the size for values of type `error::Error` cannot be known at compilation time
+   --> /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.3/src/linux_android.rs:16:44
+    |
+16  | pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), Error> {
+    |                                            ^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `core::marker::Sized` is not implemented for `error::Error`
+note: required by a bound in `core::result::Result`
+   --> /home/martin/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:503:20
+    |
+503 | pub enum Result<T, E> {
+    |                    ^ required by this bound in `core::result::Result`
+
+Some errors have detailed explanations: E0277, E0773.
+For more information about an error, try `rustc --explain E0277`.
+error: could not compile `getrandom` due to 162 previous errors
