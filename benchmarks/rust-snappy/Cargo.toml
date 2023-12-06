@@ -1,0 +1,19 @@
+[package]
+name = "parity-snappy"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+license = "MIT/Apache2.0"
+repository = "https://github.com/paritytech/rust-snappy.git"
+description = "Rust bindings for the snappy compression library"
+keywords = ["snappy"]
+
+[dependencies]
+libc = "0.2"
+parity-snappy-sys = { path = "snappy-sys", version = "0.1" }
+
+[dev-dependencies]
+rand = "0.5"
+
+[profile.bench]
+opt-level = 0
+codegen-units = 1

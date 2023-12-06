@@ -1,0 +1,799 @@
++ rm -rf target
++ LLVM_HOME=/home/martin/rust/build/x86_64-unknown-linux-gnu/llvm/build/
++ RUSTUP_TOOLCHAIN_LIB=/home/martin/rust/build/lib/rustlib/x86_64-unknown-linux-gnu/lib/
++ SVF=/home/martin/projects/mpk-rust/SVF/bin/dvf
++ MPK_LIB_DIR=/home/martin/mpk-library/build/
++ CRUST_LIB_DIR=/home/martin/crust/
++ export RUSTC=/home/martin/rust/build/bin/rustc
++ RUSTC=/home/martin/rust/build/bin/rustc
++ /home/martin/rust/build/bin/cargo fetch
++ env 'RUSTFLAGS=-L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk' /home/martin/rust/build/bin/cargo rustc --bench bench --verbose --release -- -C save-temps --emit=llvm-ir -Z print-link-args
+   Compiling libc v0.2.98
+   Compiling getrandom v0.1.16
+   Compiling cfg-if v1.0.0
+   Compiling ppv-lite86 v0.2.10
+   Compiling byteorder v1.4.3 (/home/martin/projects/mpk-rust/mpkbenches/byteorder)
+     Running `/home/martin/rust/build/bin/rustc --crate-name build_script_build /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.98/build.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debug-assertions=off -C metadata=c9f9d325584e8af2 -C extra-filename=-c9f9d325584e8af2 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/build/libc-c9f9d325584e8af2 -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/rust/build/bin/rustc --crate-name cfg_if --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/cfg-if-1.0.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no -C metadata=fd9838cf36ed6120 -C extra-filename=-fd9838cf36ed6120 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/rust/build/bin/rustc --crate-name build_script_build --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/build.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debug-assertions=off --cfg 'feature="std"' -C metadata=5c6488fe77fc3acb -C extra-filename=-5c6488fe77fc3acb --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/build/getrandom-5c6488fe77fc3acb -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/rust/build/bin/rustc --crate-name ppv_lite86 --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.10/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="simd"' --cfg 'feature="std"' -C metadata=ddfe29594625ea56 -C extra-filename=-ddfe29594625ea56 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/rust/build/bin/rustc --crate-name byteorder --edition=2018 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="std"' -C metadata=316ae0d388cbb2ec -C extra-filename=-316ae0d388cbb2ec --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/build/getrandom-5c6488fe77fc3acb/build-script-build`
+     Running `/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/build/libc-c9f9d325584e8af2/build-script-build`
+     Running `/home/martin/rust/build/bin/rustc --crate-name libc /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.98/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no -C metadata=c9ab4101bb849ba5 -C extra-filename=-c9ab4101bb849ba5 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk --cfg freebsd11 --cfg libc_priv_mod_use --cfg libc_union --cfg libc_const_size_of --cfg libc_align --cfg libc_core_cvoid --cfg libc_packedN --cfg libc_cfg_target_vendor`
+     Running `/home/martin/rust/build/bin/rustc --crate-name getrandom --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="std"' -C metadata=62a73c10cddbe225 -C extra-filename=-62a73c10cddbe225 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern cfg_if=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libcfg_if-fd9838cf36ed6120.rmeta --extern libc=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/liblibc-c9ab4101bb849ba5.rmeta --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+   Compiling rand_core v0.5.1
+     Running `/home/martin/rust/build/bin/rustc --crate-name rand_core --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/rand_core-0.5.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="alloc"' --cfg 'feature="getrandom"' --cfg 'feature="std"' -C metadata=08b13499629af378 -C extra-filename=-08b13499629af378 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern getrandom=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libgetrandom-62a73c10cddbe225.rmeta --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+   Compiling rand_chacha v0.2.2
+     Running `/home/martin/rust/build/bin/rustc --crate-name rand_chacha --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/rand_chacha-0.2.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="std"' -C metadata=25bf1c7c180f5653 -C extra-filename=-25bf1c7c180f5653 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern ppv_lite86=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libppv_lite86-ddfe29594625ea56.rmeta --extern rand_core=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand_core-08b13499629af378.rmeta --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+   Compiling rand v0.7.3
+     Running `/home/martin/rust/build/bin/rustc --crate-name rand --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.7.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="getrandom"' --cfg 'feature="getrandom_package"' --cfg 'feature="libc"' --cfg 'feature="std"' -C metadata=bab3f34d56f95da8 -C extra-filename=-bab3f34d56f95da8 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern getrandom_package=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libgetrandom-62a73c10cddbe225.rmeta --extern libc=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/liblibc-c9ab4101bb849ba5.rmeta --extern rand_chacha=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand_chacha-25bf1c7c180f5653.rmeta --extern rand_core=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand_core-08b13499629af378.rmeta --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+   Compiling quickcheck v0.9.2
+     Running `/home/martin/rust/build/bin/rustc --crate-name quickcheck --edition=2018 /home/martin/.cargo/registry/src/github.com-1ecc6299db9ec823/quickcheck-0.9.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no -C metadata=77c75277805ccb92 -C extra-filename=-77c75277805ccb92 --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern rand=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand-bab3f34d56f95da8.rmeta --extern rand_core=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand_core-08b13499629af378.rmeta --cap-lints allow -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+     Running `/home/martin/rust/build/bin/rustc --crate-name bench --edition=2018 benches/bench.rs --error-format=json --json=diagnostic-rendered-ansi --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no -C save-temps --emit=llvm-ir -Z print-link-args --test --cfg 'feature="default"' --cfg 'feature="std"' -C metadata=240cbf5eb7a158cc -C extra-filename=-240cbf5eb7a158cc --out-dir /home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps -L dependency=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps --extern byteorder=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libbyteorder-316ae0d388cbb2ec.rlib --extern quickcheck=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/libquickcheck-77c75277805ccb92.rlib --extern rand=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps/librand-bab3f34d56f95da8.rlib -L/home/martin/projects/mpk-rust/mpk-library/build/ -lmpk`
+    Finished release [optimized] target(s) in 11.09s
++ cp /home/martin/projects/mpk-rust/ProcessCommands.java .
++ javac ProcessCommands.java
++ java ProcessCommands
++ cd target/release/deps
+++ pwd
++ ORIGIN=/home/martin/projects/mpk-rust/mpkbenches/byteorder/target/release/deps
++ rm bench-240cbf5eb7a158cc.bench.4n5niuw3-cgu.0.rcgu.no-opt.bc
++ find . -name '*.bc'
++ xargs -n 1 '-I{}' /home/martin/projects/mpk-rust/SVF/bin/dvf -cxt -query=all -max-cxt=100 -flow-bg=1000000 -field-limit=0 -cxt-bg=1000000 '{}'
+
+*********CallGraph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+CalRetPairInCycle   0
+TotalEdge           5
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalNode           10
+TotalCycle          0
+#######################################################
+
+*********General Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+BBWith3Succ         0
+LocalVarInRecur     0
+TotalCallSite       5
+IndCallSites        0
+NonPtrObj           10
+BBWith2Succ         0
+ConstArrayObj       0
+ConstStructObj      0
+StackObjs           0
+VarStructObj        0
+HeapObjs            4
+BitCastNumber       0
+GlobalObjs          0
+TotalPTAPAGEdges    17
+StoresNum           0
+TotalPAGEdges       34
+MaxStructSize       0
+TotalFieldObjects   0
+TotalPointers       46
+CopysNum            4
+CallsNum            0
+TotalObjects        15
+FSObjNum            0
+LoadsNum            0
+AddrsNum            13
+GepsNum             0
+FIObjNum            14
+ReturnsNum          0
+VarArrayObj         0
+FunctionObjs        10
+-------------------------------------------------------
+#######################################################
+
+*********Constraint Graph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgIn/OutEdge       0.548387
+AvgIn/OutAddrEdge   0.419355
+AvgIn/OutCopyEdge   0.129032
+AvgIn/OutLoadEdge   0
+MaxInAddrEdge       1
+NumOfAddrs          13
+NumOfCGEdge         4
+NumOfGeps           0
+TotalValidObjNode   13
+MaxInCopyEdge       1
+NumOfCopys          4
+MaxInStoreEdge      0
+MaxOutAddrEdge      1
+TotalValidNode      31
+NumOfStores         0
+NumOfCGNode         73
+MaxOutStoreEdge     0
+NumOfLoads          0
+MaxOutCopyEdge      1
+MaxInLoadEdge       0
+MaxOutLoadEdge      0
+AvgIn/OutStoreEdge  0
+#######################################################
+
+*********Andersen Pointer Analysis Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgTopLvlPtsSize    1
+AvgPtsSetSize       0.219178
+UpdateCGTime        0
+SCCDetectTime       0
+SCCMergeTime        0
+CollapseTime        0
+LoadStoreTime       0
+TotalTime           0
+CopyGepTime         0
+NodesInCycles       0
+TotalPWCCycleNum    0
+TotalCycleNum       0
+NullPointer         0
+NumOfSCCDetect      1
+MaxNodesInSCC       0
+IndEdgeSolved       0
+IndCallSites        0
+Iterations          1
+MaxPtsSetSize       1
+DYFieldObjs         0
+DYFieldPtrs         0
+MemObjects          15
+PointsToBlkPtr      0
+Pointers            46
+NumOfSFRs           0
+StoreProcessed      0
+LoadProcessed       0
+GepProcessed        0
+PointsToConstPtr    0
+NumOfFieldExpand    0
+CopyProcessed       3
+AddrProcessed       13
+TotalObjects        15
+TotalPointers       46
+#######################################################
+
+****Memory SSA Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AverageRegSize      1
+SSARenameTime       0
+InsertPHITime       0
+GenMUCHITime        0.002
+TotalMSSATime       0.002
+GenRegionTime       0
+StoreHasChi         0
+BBHasMSSAPhi        0
+FunHasRetMu         5
+MSSAPhi             0
+CSHasMu             3
+LoadMuNode          0
+MemRegions          3
+LoadHasMu           0
+CSHasChi            3
+CSMuNode            3
+MaxRegSize          1
+FunRetMu            3
+StoreChiNode        0
+FunEntryChi         3
+FunHasEntryChi      3
+CSChiNode           3
+#######################################################
+
+****SVFG Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgWeight           1
+ConnDirEdgeTime     0
+TotalTime           0
+TLNodeTime          0
+ConnIndEdgeTime     0
+ATNodeTime          0
+OptTime             0
+MaxIndInDeg         1
+MaxIndOutDeg        1
+AvgIndInDeg         1
+AvgIndOutDeg        1
+MaxInDegree         1
+AvgOutDegree        0
+DirectCallEdge      0
+IndRetEdge          0
+IndCallEdge         0
+IndirectEdgeLabels  6
+DirectEdge          9
+TotalEdge           15
+MaxOutDegree        1
+AvgInDegree         0
+ActualIn            3
+DirectRetEdge       0
+TotalNode           37
+Gep                 0
+IndirectEdge        6
+FormalRet           3
+Addr                13
+FormalParam         2
+FormalOut           3
+ActualParam         2
+FormalIn            3
+Load                0
+ActualRet           0
+Store               0
+PHI                 3
+Copy                1
+ActualOut           3
+MSSAPhi             0
+#######################################################
+
+****Memory SSA Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AverageRegSize      1
+SSARenameTime       0
+InsertPHITime       0
+GenMUCHITime        0.002
+TotalMSSATime       0
+GenRegionTime       0
+StoreHasChi         0
+BBHasMSSAPhi        0
+FunHasRetMu         5
+MSSAPhi             0
+CSHasMu             3
+LoadMuNode          0
+MemRegions          3
+LoadHasMu           0
+CSHasChi            3
+CSMuNode            3
+MaxRegSize          1
+FunRetMu            3
+StoreChiNode        0
+FunEntryChi         3
+FunHasEntryChi      3
+CSChiNode           3
+#######################################################
+
+****SVFG Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgWeight           1
+ConnDirEdgeTime     0
+TotalTime           0
+TLNodeTime          0
+ConnIndEdgeTime     0
+ATNodeTime          0
+OptTime             0
+MaxIndInDeg         1
+MaxIndOutDeg        1
+AvgIndInDeg         1
+AvgIndOutDeg        1
+MaxInDegree         1
+AvgOutDegree        0
+DirectCallEdge      0
+IndRetEdge          0
+IndCallEdge         0
+IndirectEdgeLabels  6
+DirectEdge          9
+TotalEdge           15
+MaxOutDegree        1
+AvgInDegree         0
+ActualIn            3
+DirectRetEdge       0
+TotalNode           37
+Gep                 0
+IndirectEdge        6
+FormalRet           3
+Addr                13
+FormalParam         2
+FormalOut           3
+ActualParam         2
+FormalIn            3
+Load                0
+ActualRet           0
+Store               0
+PHI                 3
+Copy                1
+ActualOut           3
+MSSAPhi             0
+#######################################################
+
+*********CallGraph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+CalRetPairInCycle   0
+TotalEdge           5
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalNode           10
+TotalCycle          0
+#######################################################
+
+****SVFG SCC Stat****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+InsenRetEdge        0
+RetEdgeInCycle      0
+TotalRetEdge        0
+InsenCallEdge       0
+CallEdgeInCycle     0
+TotalCallEdge       0
+TotalIndEdge        6
+DirEdgeInCycle      0
+TotalDirEdge        9
+EdgeInCycle         0
+IndEdgeInCycle      0
+TotalEdge           15
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalCycle          0
+TotalNode           37
+#######################################################
+
+****Demand-Driven Pointer Analysis Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgCPtsSize         -nan
+AvgDPMAtLoc         -nan
+TotalBKCondTime     0
+TotalQueryTime      0
+AvgPtsSize          -nan
+AvgTimePerQuery     -nan
+MemoryUsageVmrss    0
+NumOfStep           0
+NumOfInfePath       0
+MaxPtsSize          0
+IndEdgeSolved       0
+NumOfSU             0
+NumOfStoreSU        0
+NumOfOOBQuery       0
+PointsToBlkPtr      0
+PointsToConstPtr    0
+NumOfQuery          0
+NumOfStore          0
+MaxDPMAtLoc         0
+NumOfStepInCycle    0
+MaxPathPerQuery     0
+MemoryUsageVmsize   0
+MaxCxtPerQuery      0
+NumOfMustAA         0
+MaxCPtsSize         0
+NumOfDPM            0
+NumOfNullPtr        0
+#######################################################
+
+*********CallGraph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+CalRetPairInCycle   0
+TotalEdge           4154
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalNode           120
+TotalCycle          0
+#######################################################
+
+*********General Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+BBWith3Succ         0
+LocalVarInRecur     0
+TotalCallSite       4601
+IndCallSites        447
+NonPtrObj           1045
+BBWith2Succ         1208
+ConstArrayObj       0
+ConstStructObj      218
+StackObjs           965
+VarStructObj        610
+HeapObjs            10
+BitCastNumber       1789
+GlobalObjs          218
+TotalPTAPAGEdges    15279
+StoresNum           4160
+TotalPAGEdges       57530
+MaxStructSize       209
+TotalFieldObjects   0
+TotalPointers       21468
+CopysNum            4642
+CallsNum            69
+TotalObjects        1314
+FSObjNum            0
+LoadsNum            2504
+AddrsNum            1614
+GepsNum             6557
+FIObjNum            1313
+ReturnsNum          18
+VarArrayObj         125
+FunctionObjs        120
+-------------------------------------------------------
+#######################################################
+
+*********Constraint Graph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgIn/OutEdge       1.16291
+AvgIn/OutAddrEdge   0.113368
+AvgIn/OutCopyEdge   0.698579
+AvgIn/OutLoadEdge   0.15138
+MaxInAddrEdge       1
+NumOfAddrs          1524
+NumOfCGEdge         14109
+NumOfGeps           6327
+TotalValidObjNode   1309
+MaxInCopyEdge       208
+NumOfCopys          3064
+MaxInStoreEdge      2
+MaxOutAddrEdge      216
+TotalValidNode      13443
+NumOfStores         2683
+NumOfCGNode         28843
+MaxOutStoreEdge     30
+NumOfLoads          2035
+MaxOutCopyEdge      209
+MaxInLoadEdge       3
+MaxOutLoadEdge      1
+AvgIn/OutStoreEdge  0
+#######################################################
+
+*********Andersen Pointer Analysis Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgTopLvlPtsSize    0.985943
+AvgPtsSetSize       0.377798
+UpdateCGTime        0
+SCCDetectTime       0.175
+SCCMergeTime        0.037
+CollapseTime        0
+LoadStoreTime       0.012
+TotalTime           0.462
+CopyGepTime         0.167
+NodesInCycles       467
+TotalPWCCycleNum    0
+TotalCycleNum       231
+NullPointer         195
+NumOfSCCDetect      4
+MaxNodesInSCC       7
+IndEdgeSolved       0
+IndCallSites        447
+Iterations          4
+MaxPtsSetSize       208
+DYFieldObjs         0
+DYFieldPtrs         406
+MemObjects          1314
+PointsToBlkPtr      0
+Pointers            21062
+NumOfSFRs           0
+StoreProcessed      759
+LoadProcessed       147
+GepProcessed        6092
+PointsToConstPtr    16
+NumOfFieldExpand    0
+CopyProcessed       2913
+AddrProcessed       1528
+TotalObjects        1314
+TotalPointers       21468
+#######################################################
+
+****Memory SSA Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AverageRegSize      1.10163
+SSARenameTime       0.029
+InsertPHITime       0.001
+GenMUCHITime        0.035
+TotalMSSATime       0.154
+GenRegionTime       0.085
+StoreHasChi         2042
+BBHasMSSAPhi        101
+FunHasRetMu         80
+MSSAPhi             199
+CSHasMu             44
+LoadMuNode          2029
+MemRegions          246
+LoadHasMu           2035
+CSHasChi            29
+CSMuNode            101
+MaxRegSize          5
+FunRetMu            257
+StoreChiNode        1982
+FunEntryChi         262
+FunHasEntryChi      74
+CSChiNode           36
+#######################################################
+
+****SVFG Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgWeight           1.09298
+ConnDirEdgeTime     0
+TotalTime           0.016
+TLNodeTime          0
+ConnIndEdgeTime     0.012
+ATNodeTime          0.004
+OptTime             0
+MaxIndInDeg         8
+MaxIndOutDeg        32
+AvgIndInDeg         1
+AvgIndOutDeg        1
+MaxInDegree         8
+AvgOutDegree        1
+DirectCallEdge      49
+IndRetEdge          40
+IndCallEdge         105
+IndirectEdgeLabels  5384
+DirectEdge          20866
+TotalEdge           25792
+MaxOutDegree        209
+AvgInDegree         1
+ActualIn            101
+DirectRetEdge       0
+TotalNode           20351
+Gep                 6557
+IndirectEdge        4926
+FormalRet           2
+Addr                1528
+FormalParam         88
+FormalOut           257
+ActualParam         4439
+FormalIn            262
+Load                2035
+ActualRet           6
+Store               2683
+PHI                 246
+Copy                1888
+ActualOut           36
+MSSAPhi             199
+#######################################################
+
+****Memory SSA Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AverageRegSize      1.10163
+SSARenameTime       0.053
+InsertPHITime       0.005
+GenMUCHITime        0.071
+TotalMSSATime       0.152
+GenRegionTime       0.171
+StoreHasChi         2042
+BBHasMSSAPhi        101
+FunHasRetMu         80
+MSSAPhi             199
+CSHasMu             44
+LoadMuNode          2029
+MemRegions          246
+LoadHasMu           2035
+CSHasChi            29
+CSMuNode            101
+MaxRegSize          5
+FunRetMu            257
+StoreChiNode        1982
+FunEntryChi         262
+FunHasEntryChi      74
+CSChiNode           36
+#######################################################
+
+****SVFG Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgWeight           1.09298
+ConnDirEdgeTime     0
+TotalTime           0.015
+TLNodeTime          0
+ConnIndEdgeTime     0.011
+ATNodeTime          0.004
+OptTime             0
+MaxIndInDeg         8
+MaxIndOutDeg        32
+AvgIndInDeg         1
+AvgIndOutDeg        1
+MaxInDegree         8
+AvgOutDegree        1
+DirectCallEdge      49
+IndRetEdge          40
+IndCallEdge         105
+IndirectEdgeLabels  5384
+DirectEdge          20866
+TotalEdge           25792
+MaxOutDegree        209
+AvgInDegree         1
+ActualIn            101
+DirectRetEdge       0
+TotalNode           20351
+Gep                 6557
+IndirectEdge        4926
+FormalRet           2
+Addr                1528
+FormalParam         88
+FormalOut           257
+ActualParam         4439
+FormalIn            262
+Load                2035
+ActualRet           6
+Store               2683
+PHI                 246
+Copy                1888
+ActualOut           36
+MSSAPhi             199
+#######################################################
+
+*********CallGraph Stats***************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+CalRetPairInCycle   0
+TotalEdge           4154
+MaxNodeInCycle      0
+NodeInCycle         0
+TotalNode           120
+TotalCycle          0
+#######################################################
+
+****SVFG SCC Stat****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+InsenRetEdge        0
+RetEdgeInCycle      13
+TotalRetEdge        40
+InsenCallEdge       0
+CallEdgeInCycle     9
+TotalCallEdge       154
+TotalIndEdge        4926
+DirEdgeInCycle      463
+TotalDirEdge        20866
+EdgeInCycle         563
+IndEdgeInCycle      100
+TotalEdge           25792
+MaxNodeInCycle      17
+NodeInCycle         531
+TotalCycle          238
+TotalNode           20351
+#######################################################
+
+****Demand-Driven Pointer Analysis Statistics****
+
+************************
+################ (program : bench-240cbf5eb7a158cc)###############
+-------------------------------------------------------
+AvgCPtsSize         2.80328
+AvgDPMAtLoc         1.01906
+TotalBKCondTime     0.001
+TotalQueryTime      0.025
+AvgPtsSize          2.80328
+AvgTimePerQuery     0.000409836
+MemoryUsageVmrss    588
+NumOfStep           1814
+NumOfInfePath       276
+MaxPtsSize          5
+IndEdgeSolved       0
+NumOfSU             0
+NumOfStoreSU        0
+NumOfOOBQuery       0
+PointsToBlkPtr      0
+PointsToConstPtr    0
+NumOfQuery          61
+NumOfStore          2683
+MaxDPMAtLoc         16
+NumOfStepInCycle    762
+MaxPathPerQuery     0
+MemoryUsageVmsize   528
+MaxCxtPerQuery      1
+NumOfMustAA         0
+MaxCPtsSize         5
+NumOfDPM            4983
+NumOfNullPtr        10
+#######################################################
+New Path:
+CallBlockNode ID: 1343   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i) {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h034064a2c37605abE}
+New Path:
+CallBlockNode ID: 19367   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i) {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h6cf9d2cb1bda1a8bE}
+New Path:
+CallBlockNode ID: 21257   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i) {  } {fun: _ZN4core3ops8function6FnOnce9call_once17ha2c10b307c509c35E}
+New Path:
+CallBlockNode ID: 22724   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i) {  } {fun: _ZN4core3ops8function6FnOnce9call_once17hf163204e4ea38bd9E}
+New Path:
+CallBlockNode ID: 1343   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h034064a2c37605abE}
+New Path:
+CallBlockNode ID: 19367   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h6cf9d2cb1bda1a8bE}
+New Path:
+CallBlockNode ID: 21257   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17ha2c10b307c509c35E}
+New Path:
+CallBlockNode ID: 22724   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17hf163204e4ea38bd9E}
+New Path:
+CallBlockNode ID: 1343   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h034064a2c37605abE}
+New Path:
+CallBlockNode ID: 19367   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h6cf9d2cb1bda1a8bE}
+New Path:
+CallBlockNode ID: 21257   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17ha2c10b307c509c35E}
+New Path:
+CallBlockNode ID: 22724   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17hf163204e4ea38bd9E}
+New Path:
+CallBlockNode ID: 1343   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h034064a2c37605abE}
+New Path:
+CallBlockNode ID: 19367   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17h6cf9d2cb1bda1a8bE}
+New Path:
+CallBlockNode ID: 21257   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17ha2c10b307c509c35E}
+New Path:
+CallBlockNode ID: 22724   call fastcc void @_ZN4core4iter6traits8iterator8Iterator7collect17h50bf0859ceb34f0cE(%"std::vec::Vec<u64>"* noalias nocapture nonnull dereferenceable(24) %numbers.i.i, %"std::iter::Take<rand::distributions::DistIter<&rand::distributions::Standard, rand::prelude::ThreadRng, u64>>"* noalias nocapture nonnull dereferenceable(24) %_3.i.i), !MPK-HEAP-MOVE !8 {  } {fun: _ZN4core3ops8function6FnOnce9call_once17hf163204e4ea38bd9E}
++ find . -name '*.bc'
++ xargs -n 1 '-I{}' /home/martin/rust/build/x86_64-unknown-linux-gnu/llvm/build//bin/opt -mpk-isolation -mpk-isolation-gates '{}' -o '{}'
+Moving static allocas
+  %inner.i.i.i = alloca { i64*, i64* }, align 8, !MPK-Extern-Move !3
+  %bytes.i.i = alloca %"std::vec::Vec<u8>", align 8, !MPK-Extern-Move !3
+  %numbers.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %inner.i.i.i = alloca { i64*, i64* }, align 8, !MPK-Extern-Move !3
+  %bytes.i.i = alloca %"std::vec::Vec<u8>", align 8, !MPK-Extern-Move !3
+  %numbers.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %inner.i.i.i = alloca { i64*, i64* }, align 8, !MPK-Extern-Move !3
+  %bytes.i.i = alloca %"std::vec::Vec<u8>", align 8, !MPK-Extern-Move !3
+  %numbers.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %inner.i.i.i = alloca { i64*, i64* }, align 8, !MPK-Extern-Move !3
+  %bytes.i.i = alloca %"std::vec::Vec<u8>", align 8, !MPK-Extern-Move !3
+  %numbers.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %vector.i.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %dummy.i = alloca {}, align 1, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %dummy.i = alloca {}, align 1, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %dummy.i = alloca {}, align 1, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %dummy.i = alloca {}, align 1, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
+Moving static allocas
+  %vector.i.i.i = alloca %"std::vec::Vec<u64>", align 8, !MPK-Extern-Move !3
+Moved static allocas
+Moving dynamic allocas
+Moved dynamic allocas
++ find . -name '*.bc'
++ xargs -n 1 '-I{}' /home/martin/rust/build/x86_64-unknown-linux-gnu/llvm/build//bin/llc '{}' -relocation-model=pic -filetype=obj
++ chmod +x final_build.sh
++ ./final_build.sh
