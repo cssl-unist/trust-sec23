@@ -52,7 +52,7 @@ do
         if [[ "$processed" == *"$stripped_bc"* ]]; then
             PROCESSED_BCS="$PROCESSED_BCS $bc_file"
             echo "Running SVF on $bc_file"
-            $SVF -cxt -query=all -max-cxt=10 -flow-bg=1000 -field-limit=0 -cxt-bg=1000 $bc_file &> output.txt; 
+            $SVF $SVFARGS $bc_file &> output.txt; 
             if [[ $? -ne 0 ]]; then
                 cat output.txt
                 exit -1

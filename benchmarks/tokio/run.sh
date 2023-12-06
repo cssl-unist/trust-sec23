@@ -4,8 +4,8 @@ cd ./target/release/deps
 
 SVF=$PRJHOME"/mpk-svf/Release-build/bin/dvf"
 echo "SVF directory : "$SVF
-#SVFARGS="-cxt -query=all -max-cxt=10 -flow-bg=1000 -field-limit=0 -cxt-bg=1000"
-SVFARGS="-cxt -query=all -max-cxt=1 -flow-bg=1 -field-limit=0 -cxt-bg=1"
+SVFARGS="-cxt -query=all -max-cxt=10 -flow-bg=1000 -field-limit=0 -cxt-bg=1000"
+#SVFARGS="-cxt -query=all -max-cxt=1 -flow-bg=1 -field-limit=0 -cxt-bg=1"
 LLVM_DIR=$PRJHOME"/rust/build/x86_64-unknown-linux-gnu/llvm/bin"
 echo "LLVM directory : "$LLVM_DIR
 LLVM_OPT="$LLVM_DIR/opt"
