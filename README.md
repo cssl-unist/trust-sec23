@@ -38,18 +38,18 @@ cd ../mpk-mimalloc
 ./build.sh
 ```
 
-## Build Dynamic Library
-```sh
-cd ../mpk-library
-./build.sh
-```
-
 ## Set Environment Variables
 ```sh
 cd ../
 . ./setup.sh
 ```
 Environment variables set-up is required for both building the framework and running benchmarks
+
+## Build Dynamic Library
+```sh
+cd $PRJHOME/mpk-library
+./build.sh
+```
 
 ## Build Demangler
 ```sh
