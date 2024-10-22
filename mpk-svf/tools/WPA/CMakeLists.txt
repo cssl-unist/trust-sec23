@@ -5,7 +5,7 @@ if(DEFINED IN_SOURCE_BUILD)
 else()
     add_executable( wpa wpa.cpp )
 
-    target_link_libraries( wpa Svf Cudd ${llvm_libs} ${PRJHOME}/mpk-rust-demangle/target/release/libmpk_rust_demangle.a)
+    target_link_libraries( wpa Svf Cudd ${llvm_libs} /trust/mpk-rust-demangle/target/release/libmpk_rust_demangle.a)
 
     link_directories(
             ${PRJHOME}/mpk-rust-demangle/target/release)

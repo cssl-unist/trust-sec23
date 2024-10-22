@@ -3,11 +3,14 @@
 //
 
 #include "threads.h"
+#include "mpk.h"
+#include <sys/mman.h>
 /* hook function */
 pthread_create_t real_pthread_create = 0;
 
 static pthread_key_t DOMAIN_KEY;
 static pthread_once_t MPK_INITIALIZATION = PTHREAD_ONCE_INIT;
+static int unsafe_key = 0;
 
 void init_domain_key(){
     if(pthread_key_create(&DOMAIN_KEY, NULL)){
@@ -19,6 +22,11 @@ void init_domain_key(){
     if(pthread_setspecific(DOMAIN_KEY, domain)){
         DOMAIN_SET_ERROR
     }
+    unsafe_key = pkey_alloc(0,0);
+    // You can gracefully allocate any key != 1, then modify mprotect in the allocator side to use the allocated key
+    //if(unsafe_key < 0 || unsafe_key != 1) {
+    //	    DOMAIN_KEY_CREATE_ERROR
+    //}
 }
 
 void init_threading_hooks(){

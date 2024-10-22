@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 cp ./nightly_commands.txt ./target/release/deps/.
 cd ./target/release/deps
 

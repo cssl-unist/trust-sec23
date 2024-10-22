@@ -17,12 +17,13 @@ MacZ3="https://github.com/Z3Prover/z3/releases/download/z3-4.8.8/z3-4.8.8-x64-os
 UbuntuZ3="https://github.com/Z3Prover/z3/releases/download/z3-4.8.8/z3-4.8.8-x64-ubuntu-16.04.zip"
 MacCTIR="https://github.com/mbarbar/ctir/releases/download/ctir-10.c3/ctir-clang-v10.c3-macos10.15.zip"
 UbuntuCTIR="https://github.com/mbarbar/ctir/releases/download/ctir-10.c3/ctir-clang-v10.c3-ubuntu18.04.zip"
-LLVMHome="llvm-12.0.0.obj"
 Z3Home="z3.obj"
 CTIRHome="ctir.obj"
 parent=`realpath $PWD`
 parent="$(dirname "$parent../")"
 export PRJHOME=$parent
+LLVMHome="${PRJHOME}/rust/build/x86_64-unknown-linux-gnu/llvm"
+echo "llvm home: $LLVMHome"
 
 # Downloads $1 (URL) to $2 (target destination) using wget or curl,
 # depending on OS.
@@ -70,20 +71,9 @@ else
     echo "Builds outside Ubuntu and macOS are not supported."
 fi
 
-########
-# Download LLVM if need be.
-#######
 if [ ! -d "$LLVM_DIR" ]
 then
-    if [ ! -d "$LLVMHome" ]
-    then
-        echo "Downloading LLVM binary for $OSDisplayName"
-        generic_download_file "$urlLLVM" llvm.tar.xz
-        mkdir -p "./$LLVMHome" && tar -xf llvm.tar.xz -C "./$LLVMHome" --strip-components 1
-        rm llvm.tar.xz
-    fi
-
-    export LLVM_DIR="$SVFHOME/$LLVMHome"
+    export LLVM_DIR="$LLVMHome"
 fi
 
 ########

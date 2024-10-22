@@ -7,6 +7,7 @@ terms of the MIT license. A copy of the license can be found in the file
 #ifndef _DEFAULT_SOURCE
 #define _DEFAULT_SOURCE   // ensure mmap flags are defined
 #endif
+#define _GNU_SOURCE
 
 #if defined(__sun)
 // illumos provides new mman.h api when any of these are defined
@@ -35,6 +36,7 @@ terms of the MIT license. A copy of the license can be found in the file
 #elif defined(__wasi__)
 #include <unistd.h>    // sbrk
 #else
+#define _GNU_SOURCE
 #include <sys/mman.h>  // mmap
 #include <unistd.h>    // sysconf
 #if defined(__linux__)
@@ -433,14 +435,20 @@ static void* mi_unix_mmapx(void* addr, size_t size, size_t try_alignment, int pr
     if (((size_t)1 << n) == try_alignment && n >= 12 && n <= 30) {  // alignment is a power of 2 and 4096 <= alignment <= 1GiB
       flags |= MAP_ALIGNED(n);
       void* p = mmap(addr, size, protect_flags, flags | MAP_ALIGNED(n), fd, 0);
-      if (p!=MAP_FAILED) return p;
+      if (p!=MAP_FAILED){ 
+	      pkey_mprotect(addr, size, protect_flags, 1);
+	      return p;
+      }
       // fall back to regular mmap
     }
   }
   #elif defined(MAP_ALIGN)  // Solaris
   if (addr == NULL && try_alignment > 0 && (try_alignment % _mi_os_page_size()) == 0) {
     void* p = mmap(try_alignment, size, protect_flags, flags | MAP_ALIGN, fd, 0);
-    if (p!=MAP_FAILED) return p;
+    if (p!=MAP_FAILED) {
+	    pkey_mprotect(addr, size, protect_flags, 1);
+	    return p;
+    }
     // fall back to regular mmap
   }
   #endif
@@ -470,6 +478,8 @@ static void* mi_unix_mmapx(void* addr, size_t size, size_t try_alignment, int pr
  _index++;
   bound = (unsigned long long)ret + size;
   /* fprintf(stderr, "errno=%d, err_msg=\"%s\"\n", errno,strerror(errno)); */
+  int pkey = pkey_alloc(0,0);
+  pkey_mprotect(ret, size, PROT_READ|PROT_WRITE, pkey);
   return ret;
 /* /\*end of modification*\/ */
   #endif

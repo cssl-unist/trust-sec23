@@ -5,9 +5,9 @@ if(DEFINED IN_SOURCE_BUILD)
 else()
     add_executable( dvf dda.cpp )
 
-    target_link_libraries( dvf Svf Cudd ${llvm_libs} ${PRJHOME}/mpk-rust-demangle/target/debug/libmpk_rust_demangle.a)
+    target_link_libraries( dvf Svf Cudd ${llvm_libs} libmpk_rust_demangle.a)
     link_directories(
-            ${PRJHOME}/mpk-rust-demangle/target/release)
+            /trust/mpk-rust-demangle/target/release)
     set_target_properties( dvf PROPERTIES
                            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
 endif()

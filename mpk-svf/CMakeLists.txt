@@ -68,7 +68,7 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Test-Suite")
 endif()
 
 LINK_DIRECTORIES(${Z3_DIR}/bin
-        ${PRJHOME}/mpk-rust-demangle/target/release)
+        /trust/mpk-rust-demangle/target/release)
 add_subdirectory(lib)
 add_subdirectory(tools)
 
