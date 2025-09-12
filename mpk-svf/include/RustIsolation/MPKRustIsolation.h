@@ -68,13 +68,22 @@ static bool isRustLibraryFunc(string FuncName){
     return false;
 }
 
-static void strapUnsafeMarks(Function &F){
+static void strapUnsafeMarks(Function &F, bool rustlibFunc){
     for(auto& BB: F){
         for(llvm::BasicBlock::iterator I = BB.begin(), E = BB.end(); I != E; ++I){
             Instruction *inst = &(*I);
+	    if(rustlibFunc){
             if(inst->getMetadata("MPK-Unsafe") != nullptr){
                 inst->setMetadata("MPK-Unsafe", nullptr);
-            }
+            }}else if(CallBase *CB = llvm::dyn_cast<CallBase>(inst)) {
+		    if(CB->getCalledFunction() != nullptr) {
+			    auto calleeName = CB->getCalledFunction()->getName();
+			    if(calleeName == "__rust_alloc" || calleeName == "__rust_dealloc" || calleeName == "__rust_realloc") {
+					    inst->setMetadata("MPK-Unsafe", nullptr);
+				    }
+			    
+		    }
+	    }
         }
     }
 }
@@ -94,9 +103,11 @@ static void strapAndMarkRustStdLibraries(Module& M){
 
         int demangle_result = demangle_func_name((char *) FuncName.c_str(), demangle_buff, 256);
         if (!demangle_result && isRustLibraryFunc(demangle_buff)) {
-            strapUnsafeMarks(F);
+            strapUnsafeMarks(F, true);
             RustLibraryFunctions.insert(&F);
-        }
+        } else {
+		strapUnsafeMarks(F, false);
+	}
         memset(demangle_buff,0,256);
     }
     free(demangle_buff);

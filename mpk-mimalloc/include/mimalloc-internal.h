@@ -344,6 +344,8 @@ extern pthread_key_t _mi_heap_default_key;
 // This thread local variable is only used when neither MI_TLS_SLOT, MI_TLS_PTHREAD, or MI_TLS_PTHREAD_SLOT_OFS are defined.
 // However, on the Apple M1 we do use the address of this variable as the unique thread-id (issue #356).
 extern mi_decl_thread mi_heap_t* _mi_heap_default;  // default heap to allocate from
+extern mi_decl_thread mi_decl_export mi_heap_t* __mi_safe_heap;
+extern mi_decl_thread mi_decl_export int	__trust_safe;
 
 
 static inline mi_heap_t* mi_get_default_heap(void) {

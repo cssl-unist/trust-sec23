@@ -18,6 +18,8 @@ terms of the MIT license. A copy of the license can be found in the file
 /* -----------------------------------------------------------
   Helpers
 ----------------------------------------------------------- */
+__thread mi_heap_t* __mi_safe_heap = NULL;
+__thread int __trust_safe = 0;
 
 // return `true` if ok, `false` to break
 typedef bool (heap_page_visitor_fun)(mi_heap_t* heap, mi_page_queue_t* pq, mi_page_t* page, void* arg1, void* arg2);

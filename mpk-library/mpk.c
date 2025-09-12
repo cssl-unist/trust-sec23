@@ -1,6 +1,7 @@
 
 #include "mpk.h"
 #include "domain.h"
+#include "mimalloc.h"
 #include <stdio.h>
 
 int INITIALIZING = 0;

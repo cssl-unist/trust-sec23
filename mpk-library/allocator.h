@@ -5,6 +5,7 @@
 #ifndef MPK_LIBRARY_ALLOCATOR_H
 #define MPK_LIBRARY_ALLOCATOR_H
 #include "domain.h"
+#include "mimalloc.h"
 
 #define MIN_REQ_SSIZE               ((size_t)0x1000000)   //80KB
 #define DEFAULT_STACK_SIZE          (MIN_REQ_SSIZE)
@@ -36,6 +37,9 @@ extern int INITIALIZING;
 extern sbrk_t real_sbrk;
 extern mmap_t real_mmap;
 extern mremap_t real_mremap;
+
+extern __thread mi_heap_t* __mi_safe_heap;
+extern __thread	int	__trust_safe;
 
 void* __safe_malloc(size_t);
 void* __unsafe_malloc(size_t);

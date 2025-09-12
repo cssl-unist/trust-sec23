@@ -640,6 +640,7 @@ void DDAPass::findUnsafePointers(PointerAnalysis* pta, SVFG* svfg, PAG* pag, con
             const SVFGNode* node = dpm.getLoc();
             const Value* val = node->getValue();
             CallBase* allocCallBase = const_cast<CallBase*>(llvm::cast<CallBase>(val));
+	    llvm::errs() << "Unsafe Alloc: " << *allocCallBase << "\n";
             if(allocCallBase->getCalledFunction()->getName().startswith("__mpk_unsafe")){
                 continue;
             }

@@ -10,11 +10,56 @@
 allocator_t safe_allocator;
 allocator_t unsafe_allocator;
 static unsigned TEMP_CALLOC[TEMP_CALLOC_SIZE];
+//static mi_heap_t* safe_heap = NULL;
 
 /* static function Hooks */
 sbrk_t real_sbrk;
 mmap_t real_mmap;
 mremap_t real_mremap;
+
+void init_safe_heap(){
+	if(!INITIALIZING){
+		__trust_safe = 1;
+		if(__mi_safe_heap == NULL){
+			__mi_safe_heap = mi_heap_new();
+			if(__mi_safe_heap == NULL){
+				exit(-1);
+			}
+		}
+		__trust_safe = 0;
+	}
+}
+
+void safe_free(void* p){
+	mi_free(p);
+}
+
+void* safe_calloc(size_t count, size_t length){
+	init_safe_heap();
+	__trust_safe = 1;
+	void* p = mi_heap_calloc(__mi_safe_heap, count, length);
+	__trust_safe = 0;
+	return p;
+}
+
+void* safe_realloc(void* p, size_t new_len){
+	init_safe_heap();
+	__trust_safe = 1;
+	p = mi_heap_realloc(__mi_safe_heap, p, new_len);
+	__trust_safe = 0;
+	return p;
+
+}
+
+
+void* safe_malloc(size_t size){
+	init_safe_heap();
+	__trust_safe = 1;
+	void* p = mi_heap_malloc(__mi_safe_heap, size);
+	__trust_safe = 0;
+	return p;
+	return p;
+}
 
 static void init_dlsym_links(void* handle, allocator_t* allocator,
                              const char* calloc_pfx,
@@ -30,7 +75,11 @@ static void init_dlsym_links(void* handle, allocator_t* allocator,
 static void init_malloc_funcs(void* handle, int allocator,
                               allocator_t* funcs, const char* err_message){
     if(!allocator){
-        init_dlsym_links(handle, funcs, "calloc", "free", "malloc", "realloc");
+//        init_dlsym_links(handle, funcs, "calloc", "free", "malloc", "realloc");
+	funcs->malloc = safe_malloc;
+	funcs->calloc = safe_calloc;
+	funcs->realloc = safe_realloc;
+	funcs->free = safe_free;
     }else{
 #if !defined(CUSTOM_MALLOC) || CUSTOM_MALLOC==1
         init_dlsym_links( handle, funcs,"mi_calloc", "mi_free", "mi_malloc", "mi_realloc");
